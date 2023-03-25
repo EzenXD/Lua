@@ -1,0 +1,6 @@
+spawnfunchion ใช้กับ กรณี ที่ต้องการ ใส่ ใน Ui หรือกํากับเอาไว้ ให้ใช้ แค่ฟังชั้นเดียว
+
+spawn(funchion()
+if _G.Loop then -- เป็นจริง
+while wait() do
+print("Ezen")
