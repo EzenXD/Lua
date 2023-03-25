@@ -1,0 +1,26 @@
+While Loop คือการ Loop แบบไม่มีที่สิ้นสุด
+_G.Loop คือการ Loop แบบกําหนด ได้ โดยมี คํ่าสั่งเปิดปิดตามนี้ true/false true เปิด false ปิด
+repaet Loop คือการ Loop แบบ กําหนด ได้
+
+while true do wait()
+print("Ezen")
+
+_G.Loop = true
+
+while _G.Loop do wait()
+print("Ezen")
+
+local count = 0 -- สร้างตัวแปร "count" เก็บค่า 0
+repeat -- เริ่มลูป
+    count = count + 1 -- เพิ่มค่าในตัวแปร count ทีละ 1
+    print(count) -- แสดงผลตัวแปร count
+until count == 5 -- เช็คว่าถ้าตัวแปร count เท่ากับ 5 ให้หยุดลูป
+
+--[[
+Output:
+    1
+    2
+    3
+    4
+    5
+]]
