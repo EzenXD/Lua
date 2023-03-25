@@ -1,0 +1,9 @@
+if คือ ถ้า
+elseif คือ ถ้าแล้ว
+
+if _G.Loop then
+while wait() do
+print("Ezen")
+elseif _G.loop then
+while wait() do
+print("Ezen1")
