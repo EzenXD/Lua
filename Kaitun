@@ -1083,6 +1083,10 @@ Main:Toggle("FarmOrb",false,function(value)
 	_G.FarmOrb = value
 end)
 
+Main:Toggle("Farm Hoop",false,function(value)
+	_G.Hoop = value
+end)
+
 Main:Button("Button",false,function()
 end)
 
@@ -1145,6 +1149,18 @@ spawn(function()
  firetouchinterest(v.outerOrb, game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, 0)
  
  firetouchinterest(v.outerOrb, game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, 1)
+ end
+		 end
+	 end)
+ end)
+
+ spawn(function()
+	game:GetService("RunService").RenderStepped:Connect(function()
+		 if _G.Hoop then
+ for i,v in pairs(game:GetService("Workspace").Hoops:GetChildren()) do
+ firetouchinterest(v, game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, 0)
+ 
+ firetouchinterest(v, game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, 1)
  end
 		 end
 	 end)
