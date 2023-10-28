@@ -1,3 +1,24 @@
+_G.Key = ""
+
+local keychecked = false
+local hwid = nill
+local hwidplr = game:GetService("RbxAnalyticsService"):GetClientId()
+
+if _G.Key == "key" then
+      hwid = "Admin"
+      keychecked = true
+end
+
+if keychecked == true then
+if hwidplr == hwid then
+        ---You script
+    else
+     game.Players.LocalPlayer:Kick("incorrect hwid")
+ end
+ else
+       game.Players.LocalPlayer:Kick("incorrect key")
+ end
+
 if game.CoreGui:FindFirstChild("SOMEXHUBMODILE") then
     game.CoreGui:FindFirstChild("SOMEXHUBMODILE"):Destroy()
 end
@@ -40,7 +61,7 @@ SOMEXHUBMODILE.Name = "SOMEXHUBMODILE"
         MODILEMAGE.BorderSizePixel = 0
         MODILEMAGE.Position = UDim2.new(0, 3, 0, 2)
         MODILEMAGE.Size = UDim2.new(0, 45, 0, 45)
-        MODILEMAGE.Image = "http://www.roblox.com/asset/?id=10162642062"
+        MODILEMAGE.Image = "http://www.roblox.com/asset/?id=11803038716"
 
 do local GUI = game.CoreGui:FindFirstChild("SOMEXHUB");if GUI then GUI:Destroy();end;if _G.Color == nil then
        _G.Color = Color3.fromRGB(255,0,0)
@@ -146,14 +167,14 @@ function Update:Window(text,logo,keybind)
 	Name.TextSize = 17.000
 
 	local Hub = Instance.new("TextLabel")
-	Hub.Name = "Hub"
+	Hub.Name = "By Noname"
 	Hub.Parent = Top
 	Hub.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Hub.BackgroundTransparency = 1.000
 	Hub.Position = UDim2.new(0, 85, 0, 0)
 	Hub.Size = UDim2.new(0, 81, 0, 27)
 	Hub.Font = Enum.Font.GothamSemibold
-	Hub.Text = "HUB"
+	Hub.Text = "By Noname"
 	Hub.TextColor3 = _G.Color
 	Hub.TextSize = 17.000
 	Hub.TextXAlignment = Enum.TextXAlignment.Left
@@ -166,7 +187,7 @@ function Update:Window(text,logo,keybind)
 	Hubb.Position = UDim2.new(0, 480, 0, 0)
 	Hubb.Size = UDim2.new(0, 81, 0, 27)
 	Hubb.Font = Enum.Font.GothamSemibold
-	Hubb.Text = "VERSION : PREMIUM"
+	Hubb.Text = "Noname X Phakaphon"
 	Hubb.TextColor3 = _G.Color
 	Hubb.TextSize = 17.000
 	Hubb.TextXAlignment = Enum.TextXAlignment.Left
@@ -186,7 +207,7 @@ local LogoHub = Instance.new("ImageLabel")
 	LogoHub.BackgroundTransparency = 1.000
 	LogoHub.Position = UDim2.new(0, 0, 0, 1)
 	LogoHub.Size = UDim2.new(0, 150, 0, 150)
-	LogoHub.Image = "http://www.roblox.com/asset/?id="..tostring(11803038716)
+	LogoHub.Image = "http://www.roblox.com/asset/?id="..tostring(Image)
 
 	local ScrollTab = Instance.new("ScrollingFrame")
 	ScrollTab.Name = "ScrollTab"
@@ -280,7 +301,7 @@ local LogoHub = Instance.new("ImageLabel")
             PageImage.BackgroundTransparency = 1.000
             PageImage.Position = UDim2.new(0, 5, 0, 5)
             PageImage.Size = UDim2.new(0, 15, 0, 15)
-            PageImage.Image = "rbxassetid://"..tostring(Image)
+            PageImage.Image = "rbxassetid://"..tostring(11803038716)
             
 		local MainFramePage = Instance.new("ScrollingFrame")
 		MainFramePage.Name = text.."_Page"
@@ -1073,18 +1094,27 @@ local LogoToggle = Instance.new("ImageLabel")
 	return uitab
 end
 
-local Library = Update:Window("MOCHI","",Enum.KeyCode.RightControl);
-Main = Library:Tab("General",6026568198)
+local Library = Update:Window("Noname X Phakaphon","",Enum.KeyCode.RightControl);
+Main = Library:Tab("General")
+Tp = Library:Tab("Tela")
 
 Main:Seperator("==  Farm Function  ==")
-Main:Label("[ Farm Orb or Gem ]")
+Main:Label("[ Farm ]")
 
-Main:Toggle("FarmOrb",false,function(value)
+Main:Toggle("Farm Orb",false,function(value)
 	_G.FarmOrb = value
 end)
 
 Main:Toggle("Farm Hoop",false,function(value)
 	_G.Hoop = value
+end)
+
+Main:Toggle("Farm Gem",false,function(value)
+	_G.Gem = value
+end)
+
+Main:Toggle("Farm All in One",false,function(value)
+	_G.All = value
 end)
 
 Main:Button("Button",false,function()
@@ -1093,11 +1123,103 @@ end)
 Main:Dropdown("Dropdown",{"1","2"},function()
 end)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 spawn(function()
 	game:GetService("RunService").RenderStepped:Connect(function()
 		 if _G.FarmOrb then
  game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb","Red Orb","City")
- game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb","Gem","City")
 		 end
 	 end)
  end)
@@ -1113,3 +1235,26 @@ spawn(function()
 		 end
 	 end)
  end)
+
+spawn(function ()
+	game:GetService("RunService").RenderStepped:Connect(function ()
+		if _G.Gem then
+		game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb","Gem","City")
+		end
+	end)
+end)
+
+spawn(function ()
+	game:GetService("RunService").Connect(function ()
+		if _G.All then
+		game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb","Red Orb","City")
+		game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb","Gem","City")
+		-----------------------------------------------------------------------------------------------
+		for i,v in pairs(game:GetService("Workspace").Hoops:GetChildren()) do
+			firetouchinterest(v, game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, 0)
+			
+			firetouchinterest(v, game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, 1)
+		        end
+	      end
+	end)
+end)
