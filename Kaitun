@@ -1093,63 +1093,11 @@ end)
 Main:Dropdown("Dropdown",{"1","2"},function()
 end)
 
-
 spawn(function()
 	game:GetService("RunService").RenderStepped:Connect(function()
 		 if _G.FarmOrb then
- local A_1 = "collectOrb" local A_2 = "Yellow Orb" local A_3 = "City" local Event = game:GetService("ReplicatedStorage").rEvents.orbEvent Event:FireServer(A_1, A_2, A_3)
-		 end
-	 end)
- end)
- 
- spawn(function()
-	game:GetService("RunService").RenderStepped:Connect(function()
-		 if _G.FarmOrb then
- local A_1 = "collectOrb" local A_2 = "Blue Orb" local A_3 = "City" local Event = game:GetService("ReplicatedStorage").rEvents.orbEvent Event:FireServer(A_1, A_2, A_3)
-		 end
-	 end)
- end)
- 
- spawn(function()
-	game:GetService("RunService").RenderStepped:Connect(function()
-		 if _G.FarmOrb then
- local A_1 = "collectOrb" local A_2 = "Red Orb" local A_3 = "City" local Event = game:GetService("ReplicatedStorage").rEvents.orbEvent Event:FireServer(A_1, A_2, A_3)
-		 end
-	 end)
- end)
- 
- spawn(function()
-	game:GetService("RunService").RenderStepped:Connect(function()
-		 if _G.FarmOrb then
- for i,v in pairs(game:GetService("Workspace").orbFolder.City:GetDescendants()) do
- firetouchinterest(v, game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, 0)
- 
- firetouchinterest(v, game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, 1)
- end
-		 end
-	 end)
- end)
- 
- spawn(function()
-	game:GetService("RunService").RenderStepped:Connect(function()
-		 if _G.FarmOrb then
- for i,v in pairs(game:GetService("Workspace").orbFolder["Snow City"]:GetChildren()) do
- firetouchinterest(v.outerOrb, game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, 0)
- 
- firetouchinterest(v.outerOrb, game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, 1)
- end
-		 end
-	 end)
- end)
- 
- spawn(function()
-	game:GetService("RunService").RenderStepped:Connect(function()
-		 if _G.FarmOrb then
- for i,v in pairs(game:GetService("Workspace").orbFolder["Desert Race"]:GetChildren()) do
- firetouchinterest(v.outerOrb, game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, 0)
- 
- firetouchinterest(v.outerOrb, game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, 1)
- end
+ game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb","Red Orb","City")
+ game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb","Gem","City")
 		 end
 	 end)
  end)
