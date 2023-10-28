@@ -5,7 +5,7 @@ local hwid = nill
 local hwidplr = game:GetService("RbxAnalyticsService"):GetClientId()
 
 if _G.Key == "key" then
-      hwid = "Admin"
+      hwid = "hwid"
       keychecked = true
 end
 
