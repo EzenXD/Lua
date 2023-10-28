@@ -186,7 +186,7 @@ local LogoHub = Instance.new("ImageLabel")
 	LogoHub.BackgroundTransparency = 1.000
 	LogoHub.Position = UDim2.new(0, 0, 0, 1)
 	LogoHub.Size = UDim2.new(0, 150, 0, 150)
-	LogoHub.Image = "http://www.roblox.com/asset/?id="..tostring(10162642062)
+	LogoHub.Image = "http://www.roblox.com/asset/?id="..tostring(11803038716)
 
 	local ScrollTab = Instance.new("ScrollingFrame")
 	ScrollTab.Name = "ScrollTab"
@@ -496,7 +496,7 @@ local LogoToggle = Instance.new("ImageLabel")
 	LogoToggle.BackgroundTransparency = 1.000
 	LogoToggle.Position = UDim2.new(0, 7, 0, 2)
 	LogoToggle.Size = UDim2.new(0, 26, 0, 26)
-	LogoToggle.Image = "http://www.roblox.com/asset/?id="..tostring(10162642062)
+	LogoToggle.Image = "http://www.roblox.com/asset/?id="..tostring(11803038716)
 
 			Circle.Name = "Circle"
 			Circle.Parent = ToggleImage
@@ -595,7 +595,7 @@ local LogoToggle = Instance.new("ImageLabel")
 			DropImage.Position = UDim2.new(0, 435, 0, 6)
 			DropImage.Rotation = 180.000
 			DropImage.Size = UDim2.new(0, 20, 0, 20)
-			DropImage.Image = "rbxassetid://10162644180"
+			DropImage.Image = "rbxassetid://11803038716"
 			
 			DropButton.Name = "DropButton"
 			DropButton.Parent = Dropdown
@@ -1075,18 +1075,12 @@ end
 
 local Library = Update:Window("MOCHI","",Enum.KeyCode.RightControl);
 Main = Library:Tab("General",6026568198)
-Stats = Library:Tab("Auto Stats",7040410130)
-Combat = Library:Tab("Combat",7251993295)
-Teleport = Library:Tab("Teleport",6035190846)
-Dungeon = Library:Tab("Dungeon",7044284832)
-BuyItem = Library:Tab("Buy Item",6031265976)
-DevilFruit = Library:Tab("Devil Fruit",7044233235)
-Misc = Library:Tab("Misc Game",6034509993)
 
 Main:Seperator("==  Farm Function  ==")
-Main:Label("[ Farm Level ]")
+Main:Label("[ Farm Orb or Gem ]")
 
-Main:Toggle("Toggle",false,function()
+Main:Toggle("FarmOrb",false,function(value)
+	_G.FarmOrb = value
 end)
 
 Main:Button("Button",false,function()
@@ -1094,3 +1088,64 @@ end)
 
 Main:Dropdown("Dropdown",{"1","2"},function()
 end)
+
+
+spawn(function()
+	game:GetService("RunService").RenderStepped:Connect(function()
+		 if _G.FarmOrb then
+ local A_1 = "collectOrb" local A_2 = "Yellow Orb" local A_3 = "City" local Event = game:GetService("ReplicatedStorage").rEvents.orbEvent Event:FireServer(A_1, A_2, A_3)
+		 end
+	 end)
+ end)
+ 
+ spawn(function()
+	game:GetService("RunService").RenderStepped:Connect(function()
+		 if _G.FarmOrb then
+ local A_1 = "collectOrb" local A_2 = "Blue Orb" local A_3 = "City" local Event = game:GetService("ReplicatedStorage").rEvents.orbEvent Event:FireServer(A_1, A_2, A_3)
+		 end
+	 end)
+ end)
+ 
+ spawn(function()
+	game:GetService("RunService").RenderStepped:Connect(function()
+		 if _G.FarmOrb then
+ local A_1 = "collectOrb" local A_2 = "Red Orb" local A_3 = "City" local Event = game:GetService("ReplicatedStorage").rEvents.orbEvent Event:FireServer(A_1, A_2, A_3)
+		 end
+	 end)
+ end)
+ 
+ spawn(function()
+	game:GetService("RunService").RenderStepped:Connect(function()
+		 if _G.FarmOrb then
+ for i,v in pairs(game:GetService("Workspace").orbFolder.City:GetDescendants()) do
+ firetouchinterest(v, game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, 0)
+ 
+ firetouchinterest(v, game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, 1)
+ end
+		 end
+	 end)
+ end)
+ 
+ spawn(function()
+	game:GetService("RunService").RenderStepped:Connect(function()
+		 if _G.FarmOrb then
+ for i,v in pairs(game:GetService("Workspace").orbFolder["Snow City"]:GetChildren()) do
+ firetouchinterest(v.outerOrb, game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, 0)
+ 
+ firetouchinterest(v.outerOrb, game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, 1)
+ end
+		 end
+	 end)
+ end)
+ 
+ spawn(function()
+	game:GetService("RunService").RenderStepped:Connect(function()
+		 if _G.FarmOrb then
+ for i,v in pairs(game:GetService("Workspace").orbFolder["Desert Race"]:GetChildren()) do
+ firetouchinterest(v.outerOrb, game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, 0)
+ 
+ firetouchinterest(v.outerOrb, game:GetService('Players').LocalPlayer.Character.HumanoidRootPart, 1)
+ end
+		 end
+	 end)
+ end)
